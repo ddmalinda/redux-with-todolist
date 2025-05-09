@@ -1,17 +1,19 @@
-export default function reducer(status=[],action) {
-    switch(action.type){
-        case 'create_todo':
-            return [...status,action.payload];
-            /* What is the Spread Operator (...)?
-            The spread operator is used to unpack elements from an array, object, or other iterable into individual elements.             */ 
-        case 'update_todo':
+import { CREATE_TODO, DELETE_TODO } from "./actions";
+
+export default function reducer(status = [], action) {
+    switch (action.type) {
+        case CREATE_TODO:
+            return [...status, action.payload];
+        /* What is the Spread Operator (...)?
+        The spread operator is used to unpack elements from an array, object, or other iterable into individual elements.             */
+        case 'UPDATAE_TODO':
             return;
-        case 'remove_todo':
+        case DELETE_TODO:
+            return status.filter((item) => item.id !== action.payload);
+        case 'CHANGE_STATus':
             return;
-        case 'change_status':
-            return ;
-        default :
-        return status;
+        default:
+            return status;
     }
 }
 /*

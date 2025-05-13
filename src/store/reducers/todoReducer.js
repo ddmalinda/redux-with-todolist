@@ -1,6 +1,6 @@
-import { CREATE_TODO, DELETE_TODO } from "./actions";
+import { CREATE_TODO, DELETE_TODO } from "../actions/todoActions";
 
-export default function reducer(status = [], action) {
+export default function todoReducer(status = [], action) {
     switch (action.type) {
         case CREATE_TODO:
             return [...status, action.payload];

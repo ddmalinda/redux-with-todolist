@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import axios from "axios";
 
 export const GET_USER_LIST_SUCCSES = 'GET_USER_LIST_SUCCSES';

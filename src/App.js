@@ -9,11 +9,7 @@ function App() {
 
   const dispatch=useDispatch();
   const todoList=useSelector((state)=>state.todoState);
-  const userList=useSelector((state)=>state.userState);
-
-
-  console.log(todoList)
-  console.log(userList)
+  const userList=useSelector((state)=>state.userState.userList);
 
 // for user 
   const hadleGetUserList=()=>{
@@ -42,7 +38,7 @@ function App() {
 
         <button onClick={hadleAddTodo}> add todo</button>
         <br/>
-        {todoList .map((val,key)=>{
+        {todoList.map((val,key)=>{
           return(
             <button onClick={()=>hadleDeleteTodo(val.id)} key={key} style={{margin:'10px'}}>
              { val.task}
